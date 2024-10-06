@@ -13,7 +13,6 @@ class ImageAdapter(_imageItems : Array<ImageItem>) : RecyclerView.Adapter<ImageA
 
     inner class ImageItemViewHolder(layout: View) : RecyclerView.ViewHolder(layout){
         val imageView = layout.findViewById<ImageView>(R.id.imageView)
-        val textView = layout.findViewById<TextView>(R.id.textView)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageItemViewHolder {
@@ -28,7 +27,6 @@ class ImageAdapter(_imageItems : Array<ImageItem>) : RecyclerView.Adapter<ImageA
 
     override fun onBindViewHolder(holder: ImageItemViewHolder, position: Int) {
         holder.imageView.setImageResource(imageItem[position].id)
-        holder.textView.text = imageItem[position].name
     }
 
 }
