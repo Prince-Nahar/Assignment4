@@ -1,6 +1,8 @@
 package edu.temple.baseassignment
 
 import android.os.Bundle
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,6 +17,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         recyclerView = findViewById(R.id.recyclerView)
+
+        val displayImageView = findViewById<ImageView>(R.id.displayImageView)
+        val nameTextView = findViewById<TextView>(R.id.nameTextView)
 
         val images = arrayOf(
             ImageItem(R.drawable.adam_peaty, "Adam Peaty"),
@@ -34,7 +39,12 @@ class MainActivity : AppCompatActivity() {
             ImageItem(R.drawable.yusuf_dikec,"Yusuf Dikec")
         )
 
-        recyclerView.adapter = ImageAdapter(images)
+        val callBack = {item: ImageItem ->
+            displayImageView.setImageResource(item.id)
+            nameTextView.text = item.name
+        }
+
+        recyclerView.adapter = ImageAdapter(images, callBack)
 
         recyclerView.layoutManager = StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL)
     }
