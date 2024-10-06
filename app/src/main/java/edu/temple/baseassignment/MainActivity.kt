@@ -2,7 +2,9 @@ package edu.temple.baseassignment
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,5 +33,9 @@ class MainActivity : AppCompatActivity() {
             R.drawable.spencer_lee,
             R.drawable.yusuf_dikec
         )
+
+        recyclerView.adapter = ImageAdapter(images)
+
+        recyclerView.layoutManager = StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL)
     }
 }
