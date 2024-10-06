@@ -17,21 +17,21 @@ class MainActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.recyclerView)
 
         val images = arrayOf(
-            R.drawable.adam_peaty,
-            R.drawable.anna_hall,
-            R.drawable.alex_walsh,
-            R.drawable.anna_cockrell,
-            R.drawable.anna_henderson,
-            R.drawable.courtney_frerichs,
-            R.drawable.danis_civil,
-            R.drawable.julien_alfred,
-            R.drawable.mykayla_skinner,
-            R.drawable.perris_benegas,
-            R.drawable.prisca_awiti,
-            R.drawable.sagen_maddalena,
-            R.drawable.simone_biles,
-            R.drawable.spencer_lee,
-            R.drawable.yusuf_dikec
+            ImageItem(R.drawable.adam_peaty, "Adam Peaty"),
+            ImageItem(R.drawable.anna_hall, "Anna Hall"),
+            ImageItem(R.drawable.alex_walsh, "Alex Walsh"),
+            ImageItem(R.drawable.anna_cockrell, "Anna Cockrell"),
+            ImageItem(R.drawable.anna_henderson,"Anna Henderson"),
+            ImageItem(R.drawable.courtney_frerichs, "Courtney Frerichs"),
+            ImageItem(R.drawable.danis_civil,"Danis Civil"),
+            ImageItem(R.drawable.julien_alfred,"Julien Alfred"),
+            ImageItem(R.drawable.mykayla_skinner,"Mykayla Skinner"),
+            ImageItem(R.drawable.perris_benegas,"Perris Benegas"),
+            ImageItem(R.drawable.prisca_awiti,"Prisca Awiti"),
+            ImageItem(R.drawable.sagen_maddalena,"Sagen Maddalena"),
+            ImageItem(R.drawable.simone_biles,"Simone Biles"),
+            ImageItem(R.drawable.spencer_lee,"Spencer Lee"),
+            ImageItem(R.drawable.yusuf_dikec,"Yusuf Dikec")
         )
 
         recyclerView.adapter = ImageAdapter(images)
