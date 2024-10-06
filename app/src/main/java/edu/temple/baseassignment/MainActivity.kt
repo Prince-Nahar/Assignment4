@@ -31,6 +31,5 @@ class MainActivity : AppCompatActivity() {
             R.drawable.spencer_lee,
             R.drawable.yusuf_dikec
         )
-
     }
 }
