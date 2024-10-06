@@ -4,7 +4,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 
-class ImageAdapter : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
+class ImageAdapter(_images : Array<Int>) : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
+
+    private val images = _images
 
     class ImageViewHolder(_imageView: ImageView) : RecyclerView.ViewHolder(_imageView){
         val imageView = _imageView
@@ -12,15 +14,21 @@ class ImageAdapter : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
-        TODO("Not yet implemented")
+        return ImageViewHolder(
+            ImageView(
+                parent.context
+            ).apply {
+                layoutParams = ViewGroup.LayoutParams(200, 200)
+            }
+        )
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return images.size
     }
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.imageView.setImageResource(images[position])
     }
 
 }
